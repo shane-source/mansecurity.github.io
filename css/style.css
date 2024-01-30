@@ -73,25 +73,44 @@ section{
 .team{
   background: lightskyblue;
 }
-.team img{
-  position: relative;
-  width: 100%;
-  object-fit: cover;
-  overflow: hidden ;
-}
-.team .card-body{
- position: absolute;
- bottom: -6opx;
- left: 50%;
- transform: translate(-50%, -50%);
- background: var(--white);
- width: 100%;
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+  height: 50%;
 }
 
-.team .card-body h2{
-  color: var(--bg-count);
-  font-size: 20;
+/* Display the columns below each other instead of side by side on small screens */
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
 }
+
+/* Add some shadows to create a card effect */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Some left and right padding inside the container */
+.container {
+  padding: 0 16px;
+
+}
+
+/* Clear floats */
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
 .contact input,
 .contact textarea{
   background-color: none;
